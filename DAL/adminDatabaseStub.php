@@ -26,31 +26,38 @@
            return $alleKunder;
         }
         
-        function registrerKunde($kunde){
+        function registrerKunde($kunde)
+        //Caroline
+        {
             
         }
         
         function slettKunde($personnummer)
+        //Caroline
         {
             
         }
         
         function registerKonto($konto)
+        //Caroline
         {
             
         }
         
         function endreKonto($konto)
+        //Renate
         {
             
         }
         
         function hentAlleKonti()
+        //Renate
         {
             
         }
         
         function slettKonto($kontonummer)
+        //Renate
         {
             
         }
