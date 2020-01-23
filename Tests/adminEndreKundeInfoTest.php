@@ -3,8 +3,10 @@ include_once '../Model/domeneModell.php';
 //include_once '../DAL/databaseStub.php';
 include_once '../BLL/bankLogikk.php';
 
-class adminEndreKontoTest extends PHPUnit\Framework\TestCase {
-    
-    
+//hentTransaksjonerTest: Laget av Tor, se for eksempel
+
+class adminEndreKundeInfoTest extends PHPUnit\Framework\TestCase {
     
 }
+
+
