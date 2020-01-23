@@ -69,32 +69,38 @@
         }
         
         function hentKonti($personnummer)
+        //Hilde
         {
           
             
         }
         
         function hentSaldi($personnummer)
+        //Hilde
         {
             
         }
         
         function registrerBetaling($kontoNr, $transaksjon)
+        //Hilde
         {
             
         }
         
         function hentBetalinger($personnummer)
+        //Ingvild
         {
             
         }
         
         function utforBetaling($TxID)
+        //Ingvild
         {
             
         }
         
         function endreKundeInfo($kunde)
+        //Ingvild
         {
             
         }
