@@ -71,8 +71,16 @@
         function hentKonti($personnummer)
         //Hilde
         {
-          
-            
+           if($personnummer==-10101010101){
+                return "Feil";
+            }
+            $konto = new konto();
+            $konto->personnummer="12345678912";
+            $konto->kontonummer=12033845678;
+            $konto->type="Spare";
+            $konto->saldo =25900.97;
+            $konto->valuta="NOK";
+            return $konto;
         }
         
         function hentSaldi($personnummer)
