@@ -57,13 +57,31 @@
         }
         
         function sjekkLoggInn($personnummer,$passord)
-        {
-            
+            {
+               if($personnummer == !null)
+            {
+                return "OK";
+            }
+            else
+            {
+                return "Feil";
+            }     
         }
         
         function hentKonti($personnummer)
         {
-            
+            if ($personnummer == 0){
+                return "ingen konti funnet!";
+            }
+            elseif ($personnummer == 1) {
+                return "1 konti funnet!";
+            }
+            elseif ($personnummer == 2) {
+                return "2 eller flere konti funnet!";
+            }
+            else {
+                return "feil i metoden!";
+            }
         }
         
         function hentSaldi($personnummer)
