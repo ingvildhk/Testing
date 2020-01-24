@@ -3,6 +3,11 @@
     <coverage xmlns="http://www.netbeans.org/ns/code-coverage/1" enabled="true"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/xampp/htdocs/TestingBank/DAL/adminDatabaseStub.php</file>
+            <file>file:/C:/xampp/htdocs/TestingBank/DAL/adminDatabase.php</file>
+            <file>file:/C:/xampp/htdocs/TestingBank/Model/domeneModell.php</file>
+            <file>file:/C:/xampp/htdocs/TestingBank/DAL/bankDatabaseStub.php</file>
+        </group>
     </open-files>
 </project-private>
