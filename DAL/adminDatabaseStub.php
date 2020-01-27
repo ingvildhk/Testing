@@ -27,21 +27,41 @@
         }
         
         function registrerKunde($kunde)
-        //Caroline
         {
-            
+            if($kunde->ID==1)
+            {
+                return "OK";
+            }
+            else
+            {
+                return "Feil";
+            }
         }
         
         function slettKunde($personnummer)
         //Caroline
         {
-            
+            if($personnummer->ID==1)
+            {
+            return "OK";
+            }
+            else
+            {
+            return "Feil";
+            }  
         }
         
         function registerKonto($konto)
         //Caroline
         {
-            
+           if($konto->ID==1)
+            {
+            return "OK";
+            }
+            else
+            {
+            return "Feil";
+            } 
         }
         
         function endreKonto($konto)
