@@ -40,9 +40,12 @@
             return "OK";
         }
         
+        
+        //tror kanskje det mangler noen if-tester her, er flere måter man kan komme til
+        //feil og ok i den faktiske DB metoden. Spørre studass. 
         function registrerKunde($kunde)
         {
-            if($kunde->ID==1)
+            if($kunde->personnummer==1)
             {
                 return "OK";
             }
@@ -66,7 +69,10 @@
         
         function registerKonto($konto)
         {
-           if($konto->ID==1)
+            if($konto->personnummer == 100){
+                return "Feil i personnummer";
+            }
+           elseif($konto->kontonummer==1)
             {
             return "OK";
             }
