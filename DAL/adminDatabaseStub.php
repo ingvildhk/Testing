@@ -39,7 +39,6 @@
         }
         
         function slettKunde($personnummer)
-        //Caroline
         {
             if($personnummer->ID==1)
             {
@@ -52,7 +51,6 @@
         }
         
         function registerKonto($konto)
-        //Caroline
         {
            if($konto->ID==1)
             {

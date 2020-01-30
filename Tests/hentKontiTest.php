@@ -4,6 +4,7 @@ include_once '../DAL/bankDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 
 //hentTransaksjonerTest: Laget av Tor, se for eksempel
+//Hilde
 
 class hentKontiTest extends PHPUnit\Framework\TestCase {
    /* public function testHentKonti() {

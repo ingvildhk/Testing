@@ -69,7 +69,6 @@
         }
         
         function hentKonti($personnummer)
-        //Hilde
         {
             $kontoer = array();
            
@@ -131,7 +130,6 @@
         }
         
         function hentSaldi($personnummer)
-        //Hilde
         {
             if($personnummer==-11223344556){
                return "Feil";
@@ -148,7 +146,6 @@
         }
         
         function registrerBetaling($kontoNr, $transaksjon)
-        //Hilde
         {
             if($kontoNr==-11223344556){
                return "Feil";
