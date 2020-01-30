@@ -26,6 +26,20 @@
            return $alleKunder;
         }
         
+        function endreKundeInfo($kunde)
+        {
+            $postnummer = $kunde->postnr;
+            $poststedet = $kunde->poststed;
+            //Hvis ikke postnr finnes i db fra for
+            if ($postnummer == 0){
+                //Hvis poststedet ikke blir lagt inn i db
+                if ($poststedet == 0){
+                    return "Feil";
+                }
+            }
+            return "OK";
+        }
+        
         function registrerKunde($kunde)
         {
             if($kunde->ID==1)

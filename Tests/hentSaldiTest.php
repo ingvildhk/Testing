@@ -8,5 +8,9 @@ include_once '../BLL/bankLogikk.php';
 
 class hentSaldiTest extends PHPUnit\Framework\TestCase {
     
+    public function testFeilPersonnummer () {
+        
+}
+    
 }
 

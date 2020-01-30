@@ -1,4 +1,4 @@
-<?php
+st<?php
     include_once '../Model/domeneModell.php';
     class BankDBStub
     {        
@@ -119,45 +119,70 @@
             }
             elseif ($personnummer == '12345678912') {
             $kontoer[] = $konto;
+            return $kontoer;
             }
             elseif ($personnummer == '23456789123') {
             $kontoer[] = $konto2 + $konto3;
+            return $kontoer;
             }           
-            elseif ($personnummer == '34567891234') {
+            else
+            {
             $kontoer[] = $konto4 + $konto5 + $konto6;
-            
+            return $kontoer;
             }
         }
         
         function hentSaldi($personnummer)
         {
-            if($personnummer==-11223344556){
-               return "Feil";
+            $saldi = array();
+           
+            $konto = new konto();
+            $konto->personnummer="12345678912";
+            $konto->kontonummer=12033845678;
+            $konto->type="Lønnskonto";
+            $konto->saldo =25900.97;
+            $konto->valuta="NOK";
+            
+            $konto2 = new konto();
+            $konto2->personnummer="23456789123";
+            $konto2->kontonummer=12033823456;
+            $konto2->type="Spare";
+            $konto2->saldo =122.48;
+            $konto2->valuta="NOK";
+            
+            $konto3 = new konto();
+            $konto3->personnummer="23456789123";
+            $konto3->kontonummer=12033823457;
+            $konto3->type="Fond";
+            $konto3->saldo =13431.44;
+            $konto3->valuta="NOK";
+            
+            if ($personnummer == ''){
+                return $kontoer;
             }
-            else {
-                $konto = new konto();
-                $konto->personnummer="12345678912";
-                $konto->kontonummer=12033845678;
-                $konto->type="Lønnskonto";
-                $konto->saldo =25900.97;
-                $konto->valuta="NOK";
-                return $konto;
+            elseif ($personnummer == '12345678912') {
+            $saldi[] = $konto;
+            return $saldi;
+            }
+            elseif ($personnummer == '23456789123') {
+            $saldi[] = $konto + $konto2;
+            return $saldi;
+            }           
+            else
+            {
+            $saldi[] = $konto + $konto2 + $konto3;
+            return $saldi;
             }
         }
         
         function registrerBetaling($kontoNr, $transaksjon)
         {
-            if($kontoNr==-11223344556){
+            if($kontoNr==-11223344556)
+            {
                return "Feil";
             }
-            else {
-                $konto = new konto();
-                $konto->personnummer="12345678912";
-                $konto->kontonummer=12033845678;
-                $konto->type="Lønnskonto";
-                $konto->saldo =18778.11;
-                $konto->valuta="NOK";
-                $konto->transaksjoner = $transaksjon;
+            else 
+            {
                 return "OK";
             }
 
@@ -249,11 +274,37 @@
         
         function registrerKunde($kunde)
         {
-            
+            $postnummer = $kunde->postnr;
+            $poststedet = $kunde->poststed;
+            $personnummer = $kunde->personnummer;
+            //Hvis ikke postnr finnes i db fra for
+            if ($postnummer == 0){
+                //Hvis poststedet ikke blir lagt inn i db
+                if ($poststedet == 0){
+                    return "Feil";
+                }
+            }
+            //Hvis kunden blir lagt til i DB
+            if ($personnummer == 1){
+                return "OK";
+            }
+            //Hvis kunde ikke kunne lagres til DB
+            else
+            {
+                return "Feil";
+            }
         }
         
         function slettKunde($personnummer)
         {
+            if ($personnummer == 1)
+            {
+                return "OK";
+            }
+            else 
+            {
+                return "Feil";
+            }
             
         }
         
