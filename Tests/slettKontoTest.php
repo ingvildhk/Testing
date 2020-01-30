@@ -4,6 +4,7 @@ include_once '../Model/domeneModell.php';
 include_once '../BLL/bankLogikk.php';
 
 //hentTransaksjonerTest: Laget av Tor, se for eksempel
+//Renate
 
 class slettKontoTest extends PHPUnit\Framework\TestCase {
     
