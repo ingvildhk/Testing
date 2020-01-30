@@ -71,20 +71,99 @@
         function hentKonti($personnummer)
         //Hilde
         {
-          
+            $kontoer = array();
+           
+            $konto = new konto();
+            $konto->personnummer="12345678912";
+            $konto->kontonummer=12033845678;
+            $konto->type="Lønnskonto";
+            $konto->saldo =25900.97;
+            $konto->valuta="NOK";
             
+            $konto2 = new konto();
+            $konto2->personnummer="23456789123";
+            $konto2->kontonummer=12033823456;
+            $konto2->type="Spare";
+            $konto2->saldo =122.48;
+            $konto2->valuta="NOK";
+            
+            $konto3 = new konto();
+            $konto3->personnummer="23456789123";
+            $konto3->kontonummer=12033823457;
+            $konto3->type="Fond";
+            $konto3->saldo =13431.44;
+            $konto3->valuta="NOK";
+            
+            $konto4 = new konto();
+            $konto4->personnummer="34567891234";
+            $konto4->kontonummer=12033823458;
+            $konto4->type="Spare";
+            $konto4->saldo =151778.33;
+            $konto4->valuta="NOK";
+            
+            $konto5 = new konto();
+            $konto5->personnummer="334567891234";
+            $konto5->kontonummer=12033823459;
+            $konto5->type="Lønnskonto";
+            $konto5->saldo =36985.12;
+            $konto5->valuta="NOK";
+            
+            $konto6 = new konto();
+            $konto6->personnummer="334567891234";
+            $konto6->kontonummer=12033823461;
+            $konto6->type="Fond";
+            $konto6->saldo =69844.15;
+            $konto6->valuta="NOK";
+            
+            if ($personnummer == ''){
+                return $kontoer;
+            }
+            elseif ($personnummer == '12345678912') {
+            $kontoer[] = $konto;
+            }
+            elseif ($personnummer == '23456789123') {
+            $kontoer[] = $konto2 + $konto3;
+            }           
+            elseif ($personnummer == '34567891234') {
+            $kontoer[] = $konto4 + $konto5 + $konto6;
+            
+            }
         }
         
         function hentSaldi($personnummer)
         //Hilde
         {
-            
+            if($personnummer==-11223344556){
+               return "Feil";
+            }
+            else {
+                $konto = new konto();
+                $konto->personnummer="12345678912";
+                $konto->kontonummer=12033845678;
+                $konto->type="Lønnskonto";
+                $konto->saldo =25900.97;
+                $konto->valuta="NOK";
+                return $konto;
+            }
         }
         
         function registrerBetaling($kontoNr, $transaksjon)
         //Hilde
         {
-            
+            if($kontoNr==-11223344556){
+               return "Feil";
+            }
+            else {
+                $konto = new konto();
+                $konto->personnummer="12345678912";
+                $konto->kontonummer=12033845678;
+                $konto->type="Lønnskonto";
+                $konto->saldo =18778.11;
+                $konto->valuta="NOK";
+                $konto->transaksjoner = $transaksjon;
+                return "OK";
+            }
+
         }
         
         function hentBetalinger($personnummer)
