@@ -11,7 +11,7 @@ class slettKontoTest extends PHPUnit\Framework\TestCase {
 
     function test_slettKonto_OK(){
         $adminLogikk = new Admin(new AdminDBStub());
-        $kontonummer = "11111111111";
+        $kontonummer = "11111111111"; // Hva skal egt skrives her???
         $OK = $adminLogikk->slettKonto($kontonummer);
         $this->assertEquals("OK", $OK);
     }
