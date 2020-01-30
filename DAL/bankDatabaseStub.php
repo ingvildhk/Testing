@@ -157,20 +157,23 @@ st<?php
             $konto3->saldo =13431.44;
             $konto3->valuta="NOK";
             
-            if ($personnummer == ''){
-                return $kontoer;
+            if ($personnummer == "1"){
+                return $saldi;
             }
-            elseif ($personnummer == '12345678912') {
+            elseif ($personnummer == "12345678912") {
             $saldi[] = $konto;
             return $saldi;
             }
-            elseif ($personnummer == '23456789123') {
-            $saldi[] = $konto + $konto2;
+            elseif ($personnummer == "23456789123") {
+            $saldi[] = $konto;
+            $saldi[] = $konto2;
             return $saldi;
             }           
             else
             {
-            $saldi[] = $konto + $konto2 + $konto3;
+            $saldi[] = $konto;
+            $saldi[] = $konto2;
+            $saldi[] = $konto3;
             return $saldi;
             }
         }
