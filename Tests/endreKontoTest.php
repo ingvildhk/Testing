@@ -1,6 +1,6 @@
 <?php
 include_once '../Model/domeneModell.php';
-//include_once '../DAL/databaseStub.php';
+include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
@@ -9,33 +9,35 @@ include_once '../BLL/adminLogikk.php';
 
 class endreKontoTest extends PHPUnit\Framework\TestCase {
 
-    function test_endreKonto_OK(){
-        $adminLogikk = new Admin(new AdminDBStub());
+    function testEndreKonto_OK(){
+        $admin = new Admin(new AdminDBStub());
         $konto = new konto();
-        $konto->kontonummer = "OK";
-        $konto->personnummer = "OK";
+        $konto->kontonummer = 1;
+        $konto->personnummer = 1;
 
-        $OK = $adminLogikk->endreKonto(($konto));
+        $OK = $admin->endreKonto($konto);
         $this->assertEquals("OK", $OK);
     }
 
-    function test_endreKonto_feilPersonnr()
+    function testEndreKonto_feilPersonnr()
     {
-        $adminLogikk = new Admin(new AdminDBStub());
+        $admin = new Admin(new AdminDBStub());
         $konto = new konto();
         $konto->personnummer = 0;
+        $konto->kontonummer = 1;
 
-        $OK = $adminLogikk->endreKonto(($konto));
+        $OK = $admin->endreKonto(($konto));
         $this->assertEquals("Feil i personnr", $OK);
     }
 
-    function test_endreKonto_feilKontonr()
+    function testEndreKonto_feilKontonr()
     {
-        $adminLogikk = new Admin(new AdminDBStub());
+        $admin = new Admin(new AdminDBStub());
         $konto = new konto();
+        $konto->personnummer = 1;
         $konto->kontonummer = 0;
 
-        $OK = $adminLogikk->endreKonto(($konto));
+        $OK = $admin->endreKonto(($konto));
         $this->assertEquals("Feil i kontonr", $OK);
     }
     
