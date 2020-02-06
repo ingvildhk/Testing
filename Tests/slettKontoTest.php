@@ -19,7 +19,7 @@ class slettKontoTest extends PHPUnit\Framework\TestCase {
     function test_slettKonto_feil()
     {
         $adminLogikk = new Admin(new AdminDBStub());
-        $kontonummer = -1;
+        $kontonummer = 0;
         $OK = $adminLogikk->slettKonto($kontonummer);
         $this->assertEquals("Feil kontonummer", $OK);
 
