@@ -57,11 +57,17 @@
       <updated>1579783785555</updated>
       <workItem from="1579783787144" duration="2501000" />
       <workItem from="1580285641539" duration="477000" />
-      <workItem from="1580981791672" duration="1048000" />
+      <workItem from="1580981791672" duration="1638000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="127" key="#Notifications" timestamp="1580984264200">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="127" key="#Notifications/0.23.1440.877@0.23.1440.877" timestamp="1580984264200" />
   </component>
 </project>
