@@ -153,7 +153,7 @@
         function slettKonto($kontonummer)
         {
             //Hvis feil skal funksjon die() kjores, sa returnerer en melding istedenfor
-            if ($kontonummer = 0){
+            if ($kontonummer == 0){
                 return "Feil kontonummer";
             }
             return "OK";
