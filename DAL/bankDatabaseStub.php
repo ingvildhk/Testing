@@ -162,18 +162,18 @@ st<?php
                         $transaksjon3->melding="Lekeland";
             
             //Hvis det er ingen betalinger som venter a bli utfort
-            if ($personnummer = 0)
+            if ($personnummer == 0)
             {
                 return $betalinger;
             }
             //Hvis det er 1 betaling som venter a bli utfort
-            else if($personnummer = 1)
+            else if($personnummer == 1)
             {
                 $betalinger[] = $transaksjon1;
                 return $betalinger;
             }
             //Hvis det er 2 betalinger som venter a bli utfort
-            else if ($personnummer = 2)
+            else if ($personnummer == 2)
             {
                 $betalinger[] = $transaksjon1;
                 $betalinger[] = $transaksjon2;
