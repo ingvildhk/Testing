@@ -191,25 +191,11 @@ st<?php
         
         function utforBetaling($TxID)
         {
-            $feil = false;
-            //Om man finner bekopet og kontoen man skal betale fra
-            if ($SxID >= 0){
-                $feil = true;
+            if ($TxID == 1) {
+                return "OK";
             }
-            //Om det er saldo på kontoen man skal betale fra
-            if ($SxID >= 1){
-                $feil = true;
-            }
-            if(!$feil){
-                //Om man finner betalingsIDen
-                if ($SxID >= 2){
-                    //Om man klarer a oppdatere saldo pa konto etter tranasksjon
-                    if ($SxID >= 3){
-                        return "OK";
-                    }
-                }
-            }
-            return "Feil";  
+            return "Feil";
+             
         }
         
         function endreKundeInfo($kunde)

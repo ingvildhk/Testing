@@ -8,4 +8,22 @@ include_once '../BLL/bankLogikk.php';
 
 class utforBetalingTest extends PHPUnit\Framework\TestCase {
     
+    public function test_utforBetaling_OK () {
+        //arrange
+        $bank = new Bank(new BankDBStub());
+        //act
+        $OK = $bank->utforBetaling(1);
+        //assert
+        $this->assertEquals("OK", $OK);   
+    }
+    
+    public function test_utforBetaling_Feil () {
+        //arrange
+        $bank = new Bank(new BankDBStub());
+        //act
+        $OK = $bank->utforBetaling(2);
+        //assert
+        $this->assertEquals("Feil", $OK); 
+    }
+    
 }
