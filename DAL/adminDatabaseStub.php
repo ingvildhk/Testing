@@ -4,6 +4,7 @@
     {
         function hentAlleKunder()
         {
+           
            $alleKunder = array();
            $kunde1 = new kunde();
            $kunde1->personnummer ="01010122344";
@@ -23,6 +24,8 @@
            $kunde3->adresse = "Bærumsveien 23, 1234 Bærum";
            $kunde3->telefonnr="99889988";
            $alleKunder[]=$kunde3;
+           
+           
            return $alleKunder;
         }
         
