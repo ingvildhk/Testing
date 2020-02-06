@@ -3,10 +3,31 @@ include_once '../Model/domeneModell.php';
 include_once '../DAL/bankDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Rentate
 
 class sjekkLoggInnTest extends PHPUnit\Framework\TestCase {
+    
+    public function testSjekkLoggInn_feilPersonnummer(){
+        //arrange
+        $bankLogikk = new Bank(new BankDBStub());
+        $personnummer = "**&&//!!((";
+        $passord = "123Passord123";                
+        //act
+        $OK = $bankLogikk->sjekkLoggInn($personnummer, $passord);
+        //assert
+        $this->assertEquals("Feil i personnummer", $OK);
+    }
+    
+    public function testSjekkLoggInn_feilPassord() {
+        //arrange
+        $bankLogikk = new Bank(new BankDBStub());
+        $personnummer = "12345678912";
+        $passord = "!";                
+        //act
+        $OK = $bankLogikk->sjekkLoggInn($personnummer, $passord);
+        //assert
+        $this->assertEquals("Feil i passord", $OK);
+    }
+    
     public function testSjekkLoggInn() {
         //arrange
         $bankLogikk = new Bank(new BankDBStub());
