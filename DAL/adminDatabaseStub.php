@@ -60,7 +60,7 @@
         
         function slettKunde($personnummer)
         {
-            if($personnummer->ID==1)
+            if($personnummer == 1)
             {
             return "OK";
             }

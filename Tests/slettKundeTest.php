@@ -11,7 +11,7 @@ class slettKundeTest extends PHPUnit\Framework\TestCase
 
     function test_slettKunde_OK()
     {
-        $bankLogikk = new Admin(new BankDBStub());
+        $bankLogikk = new Admin(new AdminDBStub());
         $personnummer = 1;
         $OK = $bankLogikk->slettKunde($personnummer);
         $this->assertEquals("OK", $OK);
@@ -19,7 +19,7 @@ class slettKundeTest extends PHPUnit\Framework\TestCase
 
     function test_slettKunde_feil()
     {
-        $bankLogikk = new Admin(new BankDBStub());
+        $bankLogikk = new Admin(new AdminDBStub());
         $personnummer = 5;
         $feil = $bankLogikk->slettKunde($personnummer);
         $this->assertEquals("Feil", $feil);

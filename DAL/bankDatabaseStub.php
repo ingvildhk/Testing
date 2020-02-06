@@ -226,42 +226,6 @@ st<?php
             return "OK";
         }
         
-        function registrerKunde($kunde)
-        {
-            $postnummer = $kunde->postnr;
-            $poststedet = $kunde->poststed;
-            $personnummer = $kunde->personnummer;
-            //Hvis ikke postnr finnes i db fra for
-            if ($postnummer == 0){
-                //Hvis poststedet ikke blir lagt inn i db
-                if ($poststedet == 0){
-                    return "Feil";
-                }
-            }
-            //Hvis kunden blir lagt til i DB
-            if ($personnummer == 1){
-                return "OK";
-            }
-            //Hvis kunde ikke kunne lagres til DB
-            else
-            {
-                return "Feil";
-            }
-        }
-        
-        function slettKunde($personnummer)
-        {
-            if ($personnummer == 1)
-            {
-                return "OK";
-            }
-            else 
-            {
-                return "Feil";
-            }
-            
-        }
-        
         function hentKundeInfo($personnummer)
         {
            $enKunde = new kunde();
