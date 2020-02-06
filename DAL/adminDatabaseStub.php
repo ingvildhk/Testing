@@ -84,8 +84,8 @@
         
         function endreKonto($konto)
         {
-            $personnr = $konto->personnr;
-            $kontonr = $konto->kontonr;
+            $personnr = $konto->personnummer;
+            $kontonr = $konto->kontonummer;
             //Hvis feil skal funksjon die() kjores, sa returnerer en melding istedenfor
             if ($personnr == 0){
                 return "Feil i personnr";

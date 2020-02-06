@@ -1,6 +1,6 @@
 <?php
 include_once '../Model/domeneModell.php';
-//include_once '../DAL/databaseStub.php';
+include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
@@ -8,7 +8,7 @@ include_once '../BLL/adminLogikk.php';
 //Caroline
 
 class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
-    function test_hentAlleKonti()
+    function testHentAlleKonti()
     {
 
         $adminLogikk = new Admin (new AdminDBStub());
@@ -26,7 +26,7 @@ class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Sparekonto", $konti[0]->type);
         $this->assertEquals(111.00, $konti[0]->saldo);
         $this->assertEquals("NOK", $konti[0]->valuta);
-        $this->assertEquals($transaksjon1, $konti[0]->transaksjoner[]);
+        $this->assertEquals($transaksjon1, $konti[0]->transaksjoner[0]);
 
 
         $transaksjon2 = new transaksjon();
@@ -40,7 +40,7 @@ class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Sparekonto", $konti[1]->type);
         $this->assertEquals(222.22, $konti[1]->saldo);
         $this->assertEquals("NOK", $konti[1]->valuta);
-        $this->assertEquals($transaksjon2, $konti[1]->transaksjoner[]);
+        $this->assertEquals($transaksjon2, $konti[1]->transaksjoner[0]);
 
         $transaksjon3 = new transaksjon();
         $transaksjon3->dato = '2019-08-16';
@@ -53,7 +53,7 @@ class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals("Sparekonto", $konti[2]->type);
         $this->assertEquals(333.33, $konti[2]->saldo);
         $this->assertEquals("NOK", $konti[2]->valuta);
-        $this->assertEquals($transaksjon3, $konti[1]->transaksjoner[]);
+        $this->assertEquals($transaksjon3, $konti[2]->transaksjoner[0]);
     }
 }
 
