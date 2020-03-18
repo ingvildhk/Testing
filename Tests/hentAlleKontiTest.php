@@ -4,9 +4,6 @@ include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Caroline
-
 class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
     function testHentAlleKonti()
     {
@@ -56,5 +53,3 @@ class hentAlleKontiTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals($transaksjon3, $konti[2]->transaksjoner[0]);
     }
 }
-
-

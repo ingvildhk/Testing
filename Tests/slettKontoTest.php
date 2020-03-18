@@ -4,9 +4,6 @@ include_once '../Model/domeneModell.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Renate
-
 class slettKontoTest extends PHPUnit\Framework\TestCase {
 
     function test_slettKonto_OK(){

@@ -4,7 +4,6 @@
     {
         function hentAlleKunder()
         {
-           
            $alleKunder = array();
            $kunde1 = new kunde();
            $kunde1->personnummer ="01010122344";
@@ -25,7 +24,6 @@
            $kunde3->telefonnr="99889988";
            $alleKunder[]=$kunde3;
            
-           
            return $alleKunder;
         }
         
@@ -34,25 +32,30 @@
             $postnummer = $kunde->postnr;
             $poststedet = $kunde->poststed;
             //Hvis ikke postnr finnes i db fra for
-            if ($postnummer == 0){
+            if ($postnummer == "1000"){
                 //Hvis poststedet ikke blir lagt inn i db
-                if ($poststedet == 0){
+                if ($poststedet == "Bergen"){
                     return "Feil";
                 }
             }
             return "OK";
         }
         
-        
-        //tror kanskje det mangler noen if-tester her, er flere måter man kan komme til
-        //feil og ok i den faktiske DB metoden. Spørre studass. 
         function registrerKunde($kunde)
         {
-            if($kunde->personnummer==1)
+            $personnummer = $kunde->personnummer;
+            $postnummer = $kunde->postnr;
+            //Hvis postnummeret ikke blir lagt inn i DB
+            if ($postnummer == 10)
+            {
+                return "Feil";
+            }
+            if ($personnummer == 1)
             {
                 return "OK";
             }
-            else
+            //Hvis kunde ikke blir lagt inn i DB
+            else 
             {
                 return "Feil";
             }
@@ -72,16 +75,17 @@
         
         function registerKonto($konto)
         {
-            if($konto->personnummer == 100){
+            if($konto->personnummer == 100)
+            {
                 return "Feil i personnummer";
             }
            elseif($konto->kontonummer==1)
             {
-            return "OK";
+                return "OK";
             }
             else
             {
-            return "Feil";
+                return "Feil";
             } 
         }
         
@@ -96,8 +100,7 @@
             if ($kontonr == 0){
                 return "Feil i kontonr";
             }
-            return "OK";
-            
+            return "OK";   
         }
         
         function hentAlleKonti()
@@ -149,8 +152,7 @@
             $kontoer[] = $konto2;
             $kontoer[] = $konto3;
             
-            return $kontoer;
-            
+            return $kontoer;   
         }
         
         function slettKonto($kontonummer)

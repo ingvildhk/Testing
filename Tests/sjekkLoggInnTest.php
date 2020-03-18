@@ -49,6 +49,4 @@ class sjekkLoggInnTest extends PHPUnit\Framework\TestCase {
         //assert
         $this->assertEquals("Innlogging feilet!", $OK);
     }
-    
 }
-

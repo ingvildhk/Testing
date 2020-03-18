@@ -4,9 +4,6 @@ include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Caroline
-
 class endreKontoTest extends PHPUnit\Framework\TestCase {
 
     function testEndreKonto_OK(){
@@ -40,8 +37,4 @@ class endreKontoTest extends PHPUnit\Framework\TestCase {
         $OK = $admin->endreKonto(($konto));
         $this->assertEquals("Feil i kontonr", $OK);
     }
-    
-
 }
-
-

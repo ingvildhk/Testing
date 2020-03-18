@@ -79,4 +79,16 @@ class Bank
         $kunde= $this->db->hentKundeInfo($personnummer);
         return $kunde;
     }
+    
+    function slettKunde($personnummer)
+    {
+        $OK = $this->db->slettKunde($personnummer);
+        return $OK;
+    }
+    
+    function registrerKunde($kunde)
+    {
+        $OK = $this->db->registrerKunde($kunde);
+        return $OK;
+    }
 }

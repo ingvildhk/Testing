@@ -3,9 +3,6 @@ include_once '../Model/domeneModell.php';
 //include_once '../DAL/databaseStub.php';
 include_once '../BLL/bankLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Ingvild
-
 class registrerBetalingTest extends PHPUnit\Framework\TestCase {
     
     public function testRegistrerBetaling_feil(){
@@ -28,7 +25,5 @@ class registrerBetalingTest extends PHPUnit\Framework\TestCase {
         $ok= $bank->registrerBetaling($kontoNr, $transaksjon);
         // assert
         $this->assertEquals("OK",$ok); 
-    }
-    
+    } 
 }
-

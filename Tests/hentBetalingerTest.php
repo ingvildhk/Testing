@@ -3,9 +3,6 @@ include_once '../Model/domeneModell.php';
 //include_once '../DAL/databaseStub.php';
 include_once '../BLL/bankLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Hilde
-
 class hentBetalingerTest extends PHPUnit\Framework\TestCase {
     
     public function test_ingenBetaling () {
@@ -103,7 +100,4 @@ class hentBetalingerTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals($transaksjon3->fraTilKontonummer,$betalinger[2]->fraTilKontonummer);
         $this->assertEquals($transaksjon3->melding,$betalinger[2]->melding);
     }
-    
-    
-    
 }

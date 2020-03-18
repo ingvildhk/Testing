@@ -3,12 +3,9 @@ include_once '../Model/domeneModell.php';
 include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/adminLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Ingvild
-
 class registrerKontoTest extends PHPUnit\Framework\TestCase {
     
-    public function testFeilPersonnummer() {
+    public function testRegistrerKonto_FeilPersonnummer() {
        // arrange
         $konto = new konto();
         $konto->personnummer = 100;

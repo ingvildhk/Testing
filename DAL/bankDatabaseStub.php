@@ -1,4 +1,4 @@
-st<?php
+<?php
     include_once '../Model/domeneModell.php';
     class BankDBStub
     {        
@@ -56,36 +56,51 @@ st<?php
             return $konto;
         }
         
-        function sjekkLoggInn($personnummer,$passord) {
-            if($personnummer=="12345678912" && $passord=="123Passord123"){
-            return "Innlogging OK!";
+        function sjekkLoggInn($personnummer,$passord) 
+        {
+            if($personnummer=="12345678912" && $passord=="123Passord123")
+            {
+                return "Innlogging OK!";
             }
-            else {
-            return "Innlogging feilet!";
+            else 
+            {
+                return "Innlogging feilet!";
             }
         }
         
         function hentKonti($personnummer)
-        {
+        {            
+            $konto1 = new konto();
+            $konto1->personnummer="12345678912";
+            $konto1->kontonummer=12033812345;
+            $konto1->type="Spare";
+            $konto1->saldo =66899.77;
+            $konto1->valuta="NOK";
+            $konti[]=$konto1;
             
-            if($personnummer==-12345678912){
-                return "Feil";
-            }
-            $konto = new konto();
-            $konto->personnummer="12345678912";
-            $konto->kontonummer=12033812345;
-            $konto->type="Spare";
-            $konto->saldo =66899.77;
-            $konto->valuta="NOK";
+            $konto2 = new konto();
+            $konto2->personnummer="12345678912";
+            $konto2->kontonummer=11111111111;
+            $konto2->type="Spare";
+            $konto2->saldo = 200;
+            $konto2->valuta="NOK";
+            $konti[]=$konto2;
             
-            return $konto;
-            }
+            $konto3 = new konto();
+            $konto3->personnummer="12345678912";
+            $konto3->kontonummer=12345678987;
+            $konto3->type="Lonn";
+            $konto3->saldo =4234;
+            $konto3->valuta="NOK";
+            $konti[]=$konto3;
+            
+            return $konti;
+        }
         
         
         function hentSaldi($personnummer)
         {
             $saldi = array();
-           
             $konto = new konto();
             $konto->personnummer="12345678912";
             $konto->kontonummer=12033845678;
@@ -107,24 +122,27 @@ st<?php
             $konto3->saldo =13431.44;
             $konto3->valuta="NOK";
             
-            if ($personnummer == "1"){
+            if ($personnummer == "1")
+            {
                 return $saldi;
             }
-            elseif ($personnummer == "12345678912") {
-            $saldi[] = $konto;
-            return $saldi;
+            elseif ($personnummer == "12345678912") 
+            {
+                $saldi[] = $konto;
+                return $saldi;
             }
-            elseif ($personnummer == "23456789123") {
-            $saldi[] = $konto;
-            $saldi[] = $konto2;
-            return $saldi;
+            elseif ($personnummer == "23456789123") 
+            {
+                $saldi[] = $konto;
+                $saldi[] = $konto2;
+                return $saldi;
             }           
             else
             {
-            $saldi[] = $konto;
-            $saldi[] = $konto2;
-            $saldi[] = $konto3;
-            return $saldi;
+                $saldi[] = $konto;
+                $saldi[] = $konto2;
+                $saldi[] = $konto3;
+                return $saldi;
             }
         }
         
@@ -138,8 +156,6 @@ st<?php
             {
                 return "OK";
             }
-            return $konto;
-
         }
          
         function hentBetalinger($personnummer)
@@ -191,11 +207,11 @@ st<?php
         
         function utforBetaling($TxID)
         {
-            if ($TxID == 1) {
+            if ($TxID == 1) 
+            {
                 return "OK";
             }
-            return "Feil";
-             
+            return "Feil";             
         }
         
         function endreKundeInfo($kunde)
@@ -203,13 +219,47 @@ st<?php
             $postnummer = $kunde->postnr;
             $poststedet = $kunde->poststed;
             //Hvis ikke postnr finnes i db fra for
-            if ($postnummer == 0){
+            if ($postnummer == "1000")
+            {
                 //Hvis poststedet ikke blir lagt inn i db
-                if ($poststedet == 0){
+                if ($poststedet == "Bergen")
+                {
                     return "Feil";
                 }
             }
             return "OK";
+        }
+        
+        function registrerKunde($kunde)
+        {
+            $personnummer = $kunde->personnummer;
+            $postnummer = $kunde->postnr;
+            //Hvis postnummeret ikke blir lagt inn i DB
+            if ($postnummer == 10)
+            {
+                return "Feil";
+            }
+            if ($personnummer == 1)
+            {
+                return "OK";
+            }
+            //Hvis kunde ikke blir lagt inn i DB
+            else 
+            {
+                return "Feil";
+            }
+        }
+        
+        function slettKunde($personnummer)
+        {
+            if ($personnummer == 1)
+            {
+                return "OK";
+            }
+            else 
+            {
+                return "Feil";
+            }  
         }
         
         function hentKundeInfo($personnummer)

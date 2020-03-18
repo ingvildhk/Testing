@@ -21,7 +21,7 @@ class AdminDB
         return $kunder;
     }
     
-    function endreKundeInfo($kunde) //mangler vi denne i stub?
+    function endreKundeInfo($kunde)
     {
         $this->db->autocommit(false);
         // Sjekk om nytt postnr ligger i Poststeds-tabellen, dersom ikke legg det inn

@@ -23,4 +23,3 @@ class hentKundeInfoTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals($kunde->telefonnr,$enKunde->telefonnr); 
     }   
 }
-

@@ -5,9 +5,6 @@ include_once '../DAL/adminDatabaseStub.php';
 include_once '../BLL/bankLogikk.php';
 include_once '../BLL/adminLogikk.php';
 
-//hentTransaksjonerTest: Laget av Tor, se for eksempel
-//Hilde
-
 class hentAlleKunderTest extends PHPUnit\Framework\TestCase {
     public function testHentAlleKunder() {
         $adminLogikk = new Admin (new AdminDBStub());
@@ -27,5 +24,4 @@ class hentAlleKunderTest extends PHPUnit\Framework\TestCase {
         $this->assertEquals('99889988',$kunder[2]->telefonnr);
 
         }
-       
     }
