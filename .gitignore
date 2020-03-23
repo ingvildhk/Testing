@@ -3,3 +3,4 @@
 *.xml
 Tests/.phpunit.result.cache
 *.cache
+*.xml
