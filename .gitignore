@@ -4,4 +4,3 @@
 Tests/.phpunit.result.cache
 *.cache
 *.xml
-nbproject/private/private.xml
