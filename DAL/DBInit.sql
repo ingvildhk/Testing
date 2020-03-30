@@ -71,7 +71,8 @@ CREATE TABLE IF NOT EXISTS `Poststed` (
 
 INSERT INTO `Poststed` (`Postnr`, `Poststed`) VALUES
 ('', 'Asker'),
-('3270', 'Asker');
+('3270', 'Asker'),
+('1234', 'Oslo');
 
 -- --------------------------------------------------------
 
